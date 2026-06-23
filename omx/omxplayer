@@ -1,0 +1,8 @@
+#!/bin/bash
+SYSTEM_LIB="/usr/lib/arm-linux-gnueabihf"
+OMX_LIBS="/home/pi/omx/libs"
+export LD_LIBRARY_PATH="$OMX_LIBS:/opt/vc/lib:$SYSTEM_LIB:${LD_LIBRARY_PATH:-}"
+OMX_DEFAULT_OPTS="--video_fifo 32"
+if [ -S /tmp/omxplayerdbus.${USER:-root} ]; then rm -f /tmp/omxplayerdbus.${USER:-root}*; fi
+if [ $# -eq 0 ]; then echo "Użycie: omxplayer [opcje] <plik>"; exit 1; fi
+exec /home/pi/omx/omxplayer.bin $OMX_DEFAULT_OPTS "$@"
