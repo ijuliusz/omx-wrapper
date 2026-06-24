@@ -1,6 +1,6 @@
 # omx-wrapper
 
-A legacy `omxplayer` wrapper for Raspberry Pi OS \*\*trixie\*\*.
+A legacy `omxplayer` wrapper for Raspberry Pi OS **trixie**.
 
 ## Why this exists
 
@@ -17,10 +17,10 @@ exact shared libraries it needs (`libavformat`, `libavcodec`, `libpango`,
 system ones, avoiding conflicts with newer/incompatible versions of the
 same libraries that may be installed on trixie.
 ## Requirements
-- Raspberry Pi OS \*\*trixie\*\*, 32-bit, with the legacy graphics stack
+- Raspberry Pi OS **trixie**, 32-bit, with the legacy graphics stack
 &#x20; (`dtoverlay=vc4-fkms-v3d` in `config.txt`).
-- The bundled libraries are linked against trixie's glibc. \*\*This will
-&#x20; not work on older releases\*\* (wheezy, jessie, stretch, buster,
+- The bundled libraries are linked against trixie's glibc. **This will
+&#x20; not work on older releases** (wheezy, jessie, stretch, buster,
 &#x20; bullseye, bookworm) - you will get errors like
 &#x20; `GLIBC\_x.xx not found`. Upgrade the system to trixie first.
 
