@@ -18,7 +18,7 @@ TARGET_HOME="/home/pi"
 TARGET_OMX="$TARGET_HOME/omx"
 
 echo "=== [1] Checking target OS version ==="
-CODENAME=$(grep -E "^VERSION_CODENAME=" /etc/os-release 2>/dev/null | cut -d= -f2)
+CODENAME=$(grep -E "^VERSION_CODENAME=" /etc/os-release 2>/dev/null | cut -d= -f2 | tr -d '"')
 
 if [ "$CODENAME" != "trixie" ]; then
     echo "ERROR: this wrapper was built for Debian/Raspbian trixie."
